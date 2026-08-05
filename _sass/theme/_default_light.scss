@@ -29,8 +29,9 @@ $sidebar-screen-min-width   : 1024px;
 /* Default light theme for the site */
 :root {
     --global-base-color                 : #{$primary-color};
-    --global-bg-color                   : #fff;
-    --global-footer-bg-color            : #f2f3f3;
+    --global-bg-color                   : #e7ebf0;
+    --global-card-bg-color              : #ffffff;
+    --global-footer-bg-color            : #dfe3e9;
     --global-border-color               : #{$lighter-gray};
     --global-dark-border-color          : #bdc1c4;
     --global-code-background-color      : #fafafa;

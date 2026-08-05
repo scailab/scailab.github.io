@@ -2,11 +2,16 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
+      {% comment %}
+        No overflow button: the nav wraps to a second line instead of collapsing
+        links into a hamburger menu. With no #site-nav button in the DOM, the
+        greedy-navigation plugin's width math yields NaN, so it never moves
+        links into .hidden-links.
+      {% endcomment %}
+      <nav id="site-nav" class="greedy-nav greedy-nav--no-toggle">
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
+            <a class="nav-home" href="{{ base_path }}/">{{ site.title }}</a>
           </li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
@@ -14,16 +19,71 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+            {% comment %}
+              Anchor links (e.g. /#members) never highlight; "/" highlights only on the home page.
+            {% endcomment %}
+            {% if link.url contains '#' %}
+              {% assign is_selected = false %}
+            {% elsif link.url == '/' %}
+              {% assign is_selected = false %}
+              {% if page.url == '/' or page.url == '/index.html' %}
+                {% assign is_selected = true %}
+              {% endif %}
+            {% else %}
+              {% assign is_selected = false %}
+              {% if page.url contains link.url %}
+                {% assign is_selected = true %}
+              {% endif %}
+            {% endif %}
+            <li class="masthead__menu-item {% if is_selected %}selected{% endif %}">
+              <a {% if link.url == '/' %}class="nav-home" {% endif %}href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
-          </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
+
+<script>
+/*
+ * Same-page nav fixes. Browsers treat a click on "/" while the URL is "/#members"
+ * as a same-document navigation and leave the scroll position alone, so "Home"
+ * appears to do nothing. Likewise, re-clicking an anchor that is already the
+ * current hash does nothing. Handle only those two dead-click cases.
+ *
+ * Navigating to a *new* hash is left entirely to the browser: it scrolls and
+ * pushes its own history entry. Rewriting history here would stamp "#members"
+ * onto the home page's entry, so returning to the site later would jump
+ * straight to that section instead of the top of the page.
+ *
+ * Delegated on document because greedy-nav clones these links into .hidden-links.
+ */
+(function () {
+  var samePage = function (link) {
+    return link.pathname === window.location.pathname && link.host === window.location.host;
+  };
+
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('a');
+    if (!link || event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey) return;
+
+    // "Home" while already on the home page: clear any hash and return to the top.
+    if (link.classList.contains('nav-home') && samePage(link)) {
+      event.preventDefault();
+      history.replaceState(null, '', link.pathname);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    // Same anchor clicked twice: scroll again without touching the URL.
+    if (link.hash && samePage(link) && link.hash === window.location.hash) {
+      var target = document.getElementById(link.hash.slice(1));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+})();
+</script>

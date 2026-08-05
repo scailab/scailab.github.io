@@ -13,7 +13,7 @@
 
     "themes",
     "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+    // Dark theme intentionally not imported — the site is locked to a light background.
 
     "include/mixins",
     "vendor/susy/susy",
@@ -34,6 +34,7 @@
 
     "layout/page",
     "layout/archive",
+    "layout/entry_list",
     "layout/sidebar",
     "layout/json_cv",
 

@@ -8,6 +8,13 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
+  - title: "Home"
+    url: /
+
+  # Anchors into the "Members" section of the home page
+  - title: "Students"
+    url: /#members
+
   - title: "Projects"
     url: /projects/
 
@@ -18,8 +25,8 @@ main:
     url: /talks/    
 
   - title: "Teaching"
-    url: /teaching/    
-    
+    url: /teaching/
+
 #  - title: "Portfolio"
 #    url: /portfolio/
         

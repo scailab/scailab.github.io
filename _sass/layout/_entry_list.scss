@@ -1,0 +1,78 @@
+/* ==========================================================================
+   ENTRY LIST
+
+   Shared bulleted list used by the Talks and Teaching pages: an accent bullet,
+   a title line, and a muted meta line ending in an accent-colored detail
+   (dates, terms taught).
+   ========================================================================== */
+
+.entry-list {
+  --accent: var(--global-base-color, #2f7f93);
+  --ink: var(--global-text-color, #4b5158);
+  --hairline: color-mix(in srgb, var(--accent) 18%, transparent);
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+
+  > li {
+    position: relative;
+    padding: 0 0 1.15rem 1.35rem;
+    margin: 0 0 1.15rem;
+    border-bottom: 1px solid var(--hairline);
+
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    /* custom bullet in the site accent color */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+  }
+
+  .entry-title {
+    display: block;
+    font-family: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+    line-height: 1.4;
+    color: var(--global-text-color);
+    margin-bottom: 0.3rem;
+  }
+
+  .entry-meta {
+    display: block;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--ink) 78%, transparent);
+  }
+
+  .entry-venue {
+    font-style: italic;
+  }
+
+  .entry-detail {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+
+  /* dates and single terms should not break mid-value */
+  .entry-detail--nowrap {
+    white-space: nowrap;
+  }
+
+  .entry-sep {
+    color: color-mix(in srgb, var(--ink) 45%, transparent);
+    padding: 0 0.35rem;
+  }
+}

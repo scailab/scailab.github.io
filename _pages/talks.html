@@ -2,7 +2,7 @@
 layout: archive
 title: "Talks and presentations"
 permalink: /talks/
-author_profile: true
+author_profile: false
 ---
 
 {% if site.talkmap_link == true %}
@@ -11,6 +11,13 @@ author_profile: true
 
 {% endif %}
 
+<ul class="entry-list">
 {% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+  <li>
+    <span class="entry-title">{{ post.title }}</span>
+    <span class="entry-meta">
+      <span class="entry-venue">{{ post.venue }}</span>{% if post.location %}<span class="entry-sep">&middot;</span>{{ post.location }}{% endif %}<span class="entry-sep">&middot;</span><span class="entry-detail entry-detail--nowrap">{% if post.date_display %}{{ post.date_display }}{% else %}{{ post.date | date: '%B %-d, %Y' }}{% endif %}</span>
+    </span>
+  </li>
 {% endfor %}
+</ul>

@@ -320,6 +320,25 @@
 }
 
 
+/* Nav without the overflow toggle: links wrap rather than collapse. */
+.greedy-nav--no-toggle {
+  .visible-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0.15rem;
+
+    li {
+      display: block;
+    }
+  }
+
+  .hidden-links {
+    display: none;
+  }
+}
+
+
 /*
    Navigation list
    ========================================================================== */

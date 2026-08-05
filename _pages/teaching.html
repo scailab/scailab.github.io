@@ -2,11 +2,27 @@
 layout: archive
 title: "Teaching"
 permalink: /teaching/
-author_profile: true
+author_profile: false
 ---
 
-{% include base_path %}
+{% comment %}
+  Courses are listed once each, newest term first, with every term a course has
+  been taught gathered onto a single line. Source: Academic CV, Teaching.
+{% endcomment %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<ul class="entry-list">
+  <li>
+    <span class="entry-title">Introduction to ML for Scientific Discovery (CS 810-E)</span>
+    <span class="entry-meta">
+      Instructor<span class="entry-sep">&middot;</span><span class="entry-venue">Stevens Institute of Technology</span><span class="entry-sep">&middot;</span>Hoboken, NJ<br>
+      <span class="entry-detail">Spring 2026</span>
+    </span>
+  </li>
+  <li>
+    <span class="entry-title">Mathematical Foundations of Machine Learning (CS-556)</span>
+    <span class="entry-meta">
+      Instructor<span class="entry-sep">&middot;</span><span class="entry-venue">Stevens Institute of Technology</span><span class="entry-sep">&middot;</span>Hoboken, NJ<br>
+      <span class="entry-detail">Spring 2026 &middot; Spring 2025 &middot; Fall 2024 &middot; Spring 2024 &middot; Fall 2023 &middot; Spring 2023 &middot; Fall 2022</span>
+    </span>
+  </li>
+</ul>

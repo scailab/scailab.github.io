@@ -27,6 +27,15 @@
   }
 }
 
+/* Pages that hide the author profile take over the sidebar's column. */
+.archive--full {
+  @include breakpoint($large) {
+    @include span(12 of 12);
+    margin-left: 0;
+    padding-right: 0;
+  }
+}
+
 .archive__subtitle {
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
