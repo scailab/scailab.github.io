@@ -7,6 +7,106 @@ redirect_from:
   - /about.html
 ---
 
+<style>
+.news-rail{
+  --accent: var(--global-base-color, #2f7f93);
+  --ink: var(--global-text-color, #4b5158);
+  float: right;
+  width: 310px;
+  max-width: 100%;
+  margin: .2rem 0 1.4rem 1.9rem;
+  padding: 1rem 1.1rem .9rem;
+  border-radius: 14px;
+  background: var(--global-card-bg-color, #fff);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  box-shadow: 0 1px 2px rgba(16,24,32,.04),
+              0 12px 28px -14px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.news-rail__title{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 .75rem;
+  padding: 0;
+  border: 0;
+}
+/* The list scrolls; the card itself stays put. */
+.news-rail__list{
+  list-style: none;
+  margin: 0;
+  padding: 0 .5rem 0 0;
+  max-height: 340px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.news-rail__list > li{
+  position: relative;
+  padding: 0 0 .8rem 1.1rem;
+  margin: 0 0 .8rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+  font-size: .87rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.news-rail__list > li:last-child{
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.news-rail__list > li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .58em;
+  width: .38rem;
+  height: .38rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.news-rail__date{
+  display: block;
+  margin-top: .2rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+}
+/* Slim scrollbar so the rail reads as a panel, not a textarea. */
+.news-rail__list{ scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--accent) 45%, transparent) transparent; }
+.news-rail__list::-webkit-scrollbar{ width: 6px; }
+.news-rail__list::-webkit-scrollbar-track{ background: transparent; }
+.news-rail__list::-webkit-scrollbar-thumb{
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 3px;
+}
+.news-rail__list::-webkit-scrollbar-thumb:hover{
+  background: color-mix(in srgb, var(--accent) 55%, transparent);
+}
+/* Below tablet the rail stops floating and becomes a full-width band. */
+@media (max-width: 900px){
+  .news-rail{
+    float: none;
+    width: 100%;
+    margin: 0 0 1.5rem;
+  }
+  .news-rail__list{ max-height: 260px; }
+}
+</style>
+
+<aside class="news-rail" aria-labelledby="news-rail-title">
+  <h2 class="news-rail__title" id="news-rail-title">ScAI Lab News</h2>
+  <ul class="news-rail__list">
+    <li>ScAI Lab to host 1st Symposium on <strong>Parsimonious SciML</strong> at AAAI 2026 Fall Symposium Series. <a href="https://sites.google.com/view/parsciml-fss26/call-for-participation" target="_blank" rel="noopener noreferrer">website</a><span class="news-rail__date">November 2026</span></li>
+    <li>LIGO-PINN framework to overcome PINN catastrophic failures pre-print published. <a href="https://arxiv.org/abs/2607.14233" target="_blank" rel="noopener noreferrer">paper link</a><span class="news-rail__date">July 2026</span></li>
+    <li>TRIE: Neural Surrogate Evaluation Framework pre-print published. <a href="https://arxiv.org/abs/2607.00196" target="_blank" rel="noopener noreferrer">paper link</a><span class="news-rail__date">June 2026</span></li>
+    <li>Bharat is off for a summer internship at Los-Alamos National Labs.<span class="news-rail__date">Summer 2026</span></li>
+    <li>ScAI Lab awarded eBay grant to explore LLM-Modulo search ranking.<span class="news-rail__date">January 2026</span></li>
+    <li>Arya admitted to Georgia Tech UG in Fall 2027. Congrats Arya!<span class="news-rail__date">January 2026</span></li>
+  </ul>
+</aside>
+
 Our group develops machine learning and AI methods that accelerate scientific discovery in domains governed by physical laws, from fluid dynamics and chemistry to the earth sciences. Much of our work centers on **Parsimonious SciML**: <u>designing neural surrogates that faithfully model complex physical systems even under severe data paucity, where simulations are too costly to produce the data that conventional models demand.</u> We are especially motivated by the opportunities modern AI and machine learning offers in accelerating large-scale computational simulations and strive to develop generalizable AI/ML models by embedding scientific domain knowledge directly into models so that predictions remain accurate, physically consistent, and able to generalize beyond the training regime. Our research is supported by organizations like eBay Inc. and Stevens Institute of Technology.
 
 Research Focus
@@ -32,6 +132,7 @@ Our work is organized around three interconnected research thrusts. Select a the
   gap: 1.15rem;
   margin: 1.5rem 0 2.5rem;
   width: 100%;
+  clear: both; /* never slide under the floated news rail */
 }
 .focus-card{
   border: 1px solid var(--global-border-color, #e3e8ea);
