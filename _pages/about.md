@@ -104,6 +104,22 @@ redirect_from:
     <li>Bharat is off for a summer internship at Los-Alamos National Labs.<span class="news-rail__date">Summer 2026</span></li>
     <li>ScAI Lab awarded eBay grant to explore LLM-Modulo search ranking.<span class="news-rail__date">January 2026</span></li>
     <li>Arya admitted to Georgia Tech UG in Fall 2027. Congrats Arya!<span class="news-rail__date">January 2026</span></li>
+    <li>Bharat's work on modeling spatiotemporal chaos with stochastic interpolants awarded 3rd place at the Los-Alamos National Labs Theoretical Division lightning talks. Congratulations Bharat!</li>
+    <li>Bharat Srikishan is off to Los-Alamos National Labs for a summer internship! Good luck Bharat.<span class="news-rail__date">May 2025</span></li>
+    <li>Nilay Anurag awarded the <em>Outstanding Master's Thesis</em> award for his thesis <em>Improving Prediction Performance in Physics Informed Machine Learning Through Pretraining and Adaptation</em>. Congratulations Nilay!<span class="news-rail__date">May 2025</span></li>
+    <li>Ali El Sayed successfully defended his M.S. thesis <em>LLM-Modulo-Rec: Leveraging Approximate World-Knowledge of LLMs to Improve eCommerce Search Ranking Under Data Paucity</em>. Ali is starting a Ph.D. at Virginia Tech in Fall 2025. Congrats and good luck Ali!<span class="news-rail__date">May 2025</span></li>
+    <li>Bharat's paper <em>Model-Agnostic Knowledge Guided Correction for Improved Neural Surrogate Rollout</em> published at ICLR 2025! <a href="https://arxiv.org/abs/2503.10048" target="_blank" rel="noopener noreferrer">paper link</a><span class="news-rail__date">April 2025</span></li>
+    <li>Paper led by ScAI Lab M.S. student Ali El Sayed accepted and selected for oral presentation at the Workshop on GenAI for E-Commerce 2024!<span class="news-rail__date">October 2024</span></li>
+    <li>Paper on Information-Guided Regularization of Language Models accepted to COLM 2024! Collaboration with the Sanghani Center @ VT. <a href="https://arxiv.org/abs/2406.14005" target="_blank" rel="noopener noreferrer">arXiv link</a><span class="news-rail__date">July 2024</span></li>
+    <li>Co-organized a 1-day tutorial at Oak Ridge National Laboratory on Knowledge-Guided Machine Learning (KGML).<span class="news-rail__date">July 2024</span></li>
+    <li>Bharat is off for a summer internship at Los Alamos National Labs!<span class="news-rail__date">June - August 2024</span></li>
+    <li>Bharat's paper on Parsimonious SciML accepted to AAAI 2024! <a href="https://ojs.aaai.org/index.php/AAAI/article/view/29428" target="_blank" rel="noopener noreferrer">paper link</a><span class="news-rail__date">February 2024</span></li>
+    <li>Co-organized the 3rd KGML Symposium at AAAI 2024!<span class="news-rail__date">February 2024</span></li>
+    <li>Ishaan selected as a Regeneron Top 300 Scholar for his West Nile Virus forecasting work conducted at ScAI Lab!<span class="news-rail__date">January 2024</span></li>
+    <li>ScAI Lab awarded an AIRS Summer Fellowship for forecasting flu and COVID-19.<span class="news-rail__date">Summer 2023</span></li>
+    <li>ScAI Lab awarded a Pinnacle Scholar summer fellowship to work on disease modeling!<span class="news-rail__date">Summer 2023</span></li>
+    <li>2 papers at the NeurIPS 2022 AI4Science Workshop!</li>
+    <li>1 paper on numeracy in NLP accepted at the NeurIPS 2022 MATH-AI Workshop!</li>
   </ul>
 </aside>
 
