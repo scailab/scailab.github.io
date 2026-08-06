@@ -502,7 +502,6 @@ Our work is organized around three interconnected research thrusts. Select a the
     <div class="focus-body">
       <span class="focus-section-label">Related Publications</span>
       <ul class="focus-pubs">
-        <li><a href="https://ieeexplore.ieee.org/abstract/document/7372200">Recommending Temporally Relevant News Content from Implicit Feedback Data</a> <span class="focus-venue">— IEEE ICTAI 2015</span></li>
         <li><a href="https://www.ijcai.org/proceedings/2019/441">DyAt Nets: Dynamic Attention Networks for State Forecasting in Cyber-Physical Systems</a> <span class="focus-venue">— IJCAI 2019</span></li>
         <li><a href="https://ieeexplore.ieee.org/document/9005511/">Multivariate Long-Term State Forecasting in Cyber-Physical Systems: A Sequence to Sequence Approach</a> <span class="focus-venue">— IEEE Big Data 2019</span></li>
         <li><a href="https://dl.acm.org/doi/abs/10.1145/3394118">Cut-n-Reveal: Time Series Segmentations with Explanations</a> <span class="focus-venue">— ACM TIST 2020</span></li>
