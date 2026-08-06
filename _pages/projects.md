@@ -65,6 +65,17 @@ classes: wide
   transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .3s ease;
   will-change: transform;
 }
+/*
+ * The theme underlines every link inside page content (.page__content a),
+ * which outranks .pcard's own text-decoration and underlines the whole card
+ * body on the single-link cards. Match that specificity to undo it.
+ */
+.page__content a.pcard,
+.page__content a.pcard:hover,
+.archive a.pcard,
+.archive a.pcard:hover{
+  text-decoration: none;
+}
 .pcard:hover{
   transform: scale(1.58);              /* ~2.5x the card's area on hover */
   z-index: 10;
